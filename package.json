@@ -19,9 +19,6 @@
     "cordova-plugin-console"
   ],
   "cordovaPlatforms": [
-    {
-      "platform": "android",
-      "locator": "browser"
-    }
+    "android"
   ]
 }
