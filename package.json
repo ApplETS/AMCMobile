@@ -16,9 +16,21 @@
   },
   "cordovaPlugins": [
     "cordova-plugin-device",
-    "cordova-plugin-console"
+    "cordova-plugin-console",
+    {
+      "locator": "https://github.com/apache/cordova-plugin-whitelist.git",
+      "id": "cordova-plugin-whitelist"
+    },
+    {
+      "variables": {
+        "SENDER_ID": "906442386882"
+      },
+      "locator": "phonegap-plugin-push",
+      "id": "phonegap-plugin-push"
+    }
   ],
   "cordovaPlatforms": [
-    "android"
+    "android",
+    "ios"
   ]
 }

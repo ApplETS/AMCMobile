@@ -1,7 +1,27 @@
 {
   "name": "HelloIonic",
-  "private": "true",
+  "private": true,
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.2.4"
-  }
+    "ionic": "driftyco/ionic-bower#1.2.4",
+    "ionic-platform-web-client": "^0.6.0"
+  },
+  "resolutions": {
+    "angular": "1.5.0"
+  },
+  "homepage": "https://github.com/ApplETS/AMCMobile",
+  "authors": [
+    "valentin <valentin.debris.1@ens.etsmtl.ca>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ]
 }

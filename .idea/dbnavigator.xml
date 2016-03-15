@@ -25,6 +25,12 @@
     <show-object-properties value="true" />
     <loaded-nodes />
   </component>
+  <component name="DBNavigator.Project.DatabaseConsoleManager">
+    <connection id="880e9f2b-2bbc-45ff-8a1c-ee274f2bf4d8">
+      <console name="AMC DB" type="STANDARD" />
+      <console name="AMC DB 1" type="STANDARD"><![CDATA[select * from evenements]]></console>
+    </connection>
+  </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
   </component>
@@ -47,7 +53,82 @@
     <recently-used-interfaces />
   </component>
   <component name="DBNavigator.Project.Settings">
-    <connections />
+    <connections>
+      <connection id="880e9f2b-2bbc-45ff-8a1c-ee274f2bf4d8" active="true">
+        <database>
+          <name value="AMC DB" />
+          <description value="" />
+          <database-type value="POSTGRES" />
+          <config-type value="BASIC" />
+          <database-version value="9.4" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
+          <host value="localhost" />
+          <port value="5432" />
+          <database value="amcmobile" />
+          <url-type value="DATABASE" />
+          <os-authentication value="false" />
+          <empty-password value="false" />
+          <user value="postgres" />
+          <password value="c2FuZ2hh" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <proxy-password value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <details>
+          <charset value="UTF-8" />
+          <ddl-file-binding value="true" />
+          <database-logging value="true" />
+          <environment-type value="default" />
+          <idle-time-to-disconnect value="30" />
+          <password-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+          <connect-automatically value="true" />
+        </details>
+        <object-filters hide-empty-schemas="true">
+          <object-type-filter use-master-settings="true">
+            <object-type name="SCHEMA" enabled="false" />
+            <object-type name="USER" enabled="false" />
+            <object-type name="ROLE" enabled="false" />
+            <object-type name="PRIVILEGE" enabled="false" />
+            <object-type name="CHARSET" enabled="false" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="false" />
+            <object-type name="MATERIALIZED VIEW" enabled="false" />
+            <object-type name="NESTED TABLE" enabled="false" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="TRIGGER" enabled="true" />
+            <object-type name="TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="false" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="false" />
+            <object-type name="FUNCTION" enabled="false" />
+            <object-type name="PACKAGE" enabled="false" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE ATTRIBUTE" enabled="false" />
+            <object-type name="ARGUMENT" enabled="false" />
+            <object-type name="DIMENSION" enabled="false" />
+            <object-type name="CLUSTER" enabled="false" />
+            <object-type name="DBLINK" enabled="false" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+    </connections>
     <browser-settings>
       <general>
         <display-mode value="TABBED" />
