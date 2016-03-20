@@ -1,0 +1,22 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">S'inscrire</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLoginEB()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Numéro de rés." ng-model="loginData.resNumb">
+      </label>
+
+      <button class="button button-positive" ng-click="scanBarcode()" >Scanner le ticket</button>
+      <button class="button button-positive" ng-click="doLoginEB()">Valider</button>
+    </div>
+
+    <label class="item">
+      <button class="button button-block button-positive" ng-click="useEBForm()" >Se connecter via Eventbrite</button>
+    </label>
+  </ion-content>
+</ion-modal-view>
