@@ -9,7 +9,7 @@ angular.module('amc', ['ionic','ionic.service.core', 'ionic.service.analytics',
   'amc.servicesEvents', 'amc.servicesSongs', 'amc.servicesDraws'])
 .constant('URL_WEB_SERVICE', 'http://192.168.1.4:8080/rest/')
 
-.run(function($ionicPlatform, $ionicAnalytics, $cordovaClipboard) {
+.run(function($ionicPlatform, $ionicAnalytics, $cordovaClipboard, $http, URL_WEB_SERVICE) {
   $ionicPlatform.ready(function() {
     //$ionicAnalytics.register();
 
@@ -31,12 +31,27 @@ angular.module('amc', ['ionic','ionic.service.core', 'ionic.service.analytics',
     });
 
     push.register(function(token) {
+      push.saveToken(token, { 'ignore_user': true });
       console.log("Device token:",token.token);
-      //alert("Token : "+token.token);
 
-      //$scope.token = token.token;
-      $cordovaClipboard
-        .copy(token.token);
+      var params = {
+        tokenID: token.token
+      };
+
+      //Send the token to the API to save it in the database (or update the date for last use)
+      $http({
+        method: 'POST',
+        url: URL_WEB_SERVICE + 'amc-tokens/newtoken/',
+        data: params
+      }).success(function (data, status, header, config) {
+        console.log(angular.toJson(data));
+      }).error(function (error) {
+        console.log(error);
+      });
+
+      ////$scope.token = token.token;
+      //$cordovaClipboard
+      //  .copy(token.token);
     });
   });
 })
@@ -100,4 +115,5 @@ angular.module('amc', ['ionic','ionic.service.core', 'ionic.service.analytics',
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/events');
-});
+})
+;

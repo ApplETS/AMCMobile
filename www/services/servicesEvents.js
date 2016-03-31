@@ -28,4 +28,5 @@ angular.module('amc.servicesEvents', ['ngResource'])
         });
     }
   }
-});
+})
+;

@@ -1,5 +1,4 @@
 angular.module('amc.servicesSongs', ['ngResource'])
-
 .factory('SongsFactory', function($http, URL_WEB_SERVICE) {
   var urlAllSongs = URL_WEB_SERVICE + 'amc-musiques/all';
   var urlSong = URL_WEB_SERVICE + 'amc-musiques/id/';

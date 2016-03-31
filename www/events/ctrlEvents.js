@@ -12,6 +12,6 @@ angular.module('amc.ctrlEvents', [])
   });
 })
 
-.controller('EventCtrl', function($scope, $stateParams) {
+.controller('EventCtrl', function($scope) {
 });
 

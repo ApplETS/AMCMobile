@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Sat Mar 19 2016 00:50:24 GMT-0400 (Est (heure d’été))
+// Generated on Tue Mar 22 2016 22:47:27 GMT-0400 (Est (heure d’été))
 
 module.exports = function(config) {
   config.set({
@@ -15,7 +15,32 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './*.js'
+      '../www/lib/ionic/js/ionic.bundle.js',
+      //'../www/lib/angular/angular.js', //include in ionic.bundle.js
+
+      //'../www/lib/angular/angular.js',
+      //'../www/lib/angular/angular-*.js',
+      //'../node_modules/angular-mocks/angular-mocks.js',
+      '../www/lib/ngCordova/dist/ng-cordova.js',
+      '../www/lib/ionic/js/angular-ui/angular-ui-router.js',
+      '../www/lib/angular-animate/angular-animate.js',
+      '../www/lib/angular-sanitize/angular-sanitize.js',
+      '../www/lib/angular-resource/angular-resource.js',
+      '../www/lib/angular-mocks/angular-mocks.js',
+      '../www/lib/ngMockHttp.js',
+
+      '../www/js/app.js',
+      '../www/songs/*.js',
+      '../www/services/*.js',
+      '../www/draws/*.js',
+      '../www/events/*.js',
+      '../www/layout/*.js',
+      //'../www/services/*.js',
+
+      './Constants.js',
+      './Services/*.js',
+      './Controllers/*.js'
+      //'../www/**/*.js'
     ],
 
 
@@ -55,7 +80,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
@@ -66,4 +91,4 @@ module.exports = function(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity
   })
-};
+}
