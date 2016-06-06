@@ -1,0 +1,18 @@
+<ion-view view-title="Partenaires">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Détail pour l'évènement :
+        </div>
+        <select ng-model="selectedEvent" ng-change="changeEvent(selectedEvent)" ng-options="event as event.title for event in events"></select>
+      </label>
+    </div>
+
+    <ion-list>
+      <ion-item ng-repeat="partner in partners" href="#/app/partners/{{partner.id}}" >
+          {{partner.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
