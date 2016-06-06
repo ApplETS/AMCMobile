@@ -2,13 +2,14 @@
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="song in songs" class="item item-thumbnail-left item-button-right" >
-          <img src="{{song.image}}">
-          <h2>{{song.title}}</h2>
-          <p>{{song.autor}}</p>
+        <img src="{{song.image}}">
+        <h2>{{song.title}}</h2>
+        <p>{{song.autor}}</p>
 
-          <button class="button button-positive" ng-click="submitVoteSong(song)">
-            <i class="icon ion-plus-round"></i>
-          </button>
+        <button class="button button-positive" ng-click="submitVoteSong(song)">
+          <i class="icon ion-plus-round"></i>
+        </button>
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-view>

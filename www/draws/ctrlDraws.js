@@ -4,17 +4,26 @@ angular.module('amc.ctrlDraws', ['ngCordova'])
     EventsFactory.getEvents().then(function(data){
       var listEvents = [];
       for(var i=0;i<data.length;i++){
-        listEvents.push({ title: data[i].nom, id: data[i].id});
+        listEvents.push({ title: data[i].nom, id: data[i].id, dateDebut:data[i].dateDebut, dateFin:data[i].dateFin});
       }
 
       $scope.events = listEvents;
       $scope.selectedEvent = listEvents[0];
+
+      //TODO, donne heure selon UTC...
+      var seconds = Math.floor(Date.now() / 1000);
+      if(data[0].dateDebut < seconds && data[0].dateFin > seconds)
+        $scope.hideBtnInsc = false;
+      else
+        $scope.hideBtnInsc = true;
+      //alert(seconds);
 
       DrawsFactory.getDrawsEvent(listEvents[0].id).then(function(data){
         var listDraws = [];
         for(var i=0;i<data.length;i++){
           listDraws.push({ title: data[i].titre, id: data[i].id});
         }
+
 
         $scope.draws = listDraws;
       });
@@ -24,11 +33,23 @@ angular.module('amc.ctrlDraws', ['ngCordova'])
       //Update the list of draws for the selected event
       DrawsFactory.getDrawsEvent(selectedEvent.id).then(function(data){
         var listDraws = [];
+        var positionSelected = 0;
         for(var i=0;i<data.length;i++){
           listDraws.push({ title: data[i].titre, id: data[i].id});
+          if(selectedEvent.id == data[i].id)
+            positionSelected = i;
         }
 
+        var seconds = Math.floor(Date.now() / 1000);
+        if(selectedEvent.dateDebut < seconds && selectedEvent.dateFin > seconds)
+          $scope.hideBtnInsc = false;
+        else
+          $scope.hideBtnInsc = true;
+
         $scope.draws = listDraws;
+
+        //alert(angular.toJson(selectedEvent))
+
       });
     };
 

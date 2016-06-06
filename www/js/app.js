@@ -5,9 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'amc.controllers' is found in controllers.js
 angular.module('amc', ['ionic','ionic.service.core', 'ionic.service.analytics',
-  'amc.ctrlLayout', 'amc.ctrlSongs', 'amc.ctrlDraws', 'amc.ctrlEvents',
-  'amc.servicesEvents', 'amc.servicesSongs', 'amc.servicesDraws'])
-.constant('URL_WEB_SERVICE', 'http://192.168.1.4:8080/rest/')
+  'amc.ctrlLayout', 'amc.ctrlSongs', 'amc.ctrlDraws', 'amc.ctrlEvents', 'amc.ctrlPartners', 'amc.ctrlAgendas', 'amc.ctrlTwitters',
+  'amc.servicesEvents', 'amc.servicesSongs', 'amc.servicesDraws', 'amc.servicesPartners', 'amc.servicesAgendas', 'amc.servicesTwitters'])
+.constant('URL_WEB_SERVICE', 'http://192.168.1.11:8080/rest/')
 
 .run(function($ionicPlatform, $ionicAnalytics, $cordovaClipboard, $http, URL_WEB_SERVICE) {
   $ionicPlatform.ready(function() {
@@ -84,6 +84,46 @@ angular.module('amc', ['ionic','ionic.service.core', 'ionic.service.analytics',
       }
     })
 
+    .state('app.partners', {
+      url: '/partners',
+      views: {
+        'menuContent': {
+          templateUrl: 'partners/partners.html',
+          controller: 'PartnersCtrl'
+        }
+      }
+    })
+
+    .state('app.partner', {
+      url: '/partners/:partnerId',
+      views: {
+        'menuContent': {
+          templateUrl: 'partners/partner.html',
+          controller: 'PartnerCtrl'
+        }
+      }
+    })
+
+    .state('app.agendas', {
+      url: '/agendas',
+      views: {
+        'menuContent': {
+          templateUrl: 'agendas/agendas.html',
+          controller: 'AgendasCtrl'
+        }
+      }
+    })
+
+    .state('app.agenda', {
+      url: '/agendas/:agendaId',
+      views: {
+        'menuContent': {
+          templateUrl: 'agendas/agenda.html',
+          controller: 'AgendaCtrl'
+        }
+      }
+    })
+
     .state('app.draws', {
       url: '/draws',
       views: {
@@ -112,7 +152,18 @@ angular.module('amc', ['ionic','ionic.service.core', 'ionic.service.analytics',
           controller: 'SongsCtrl'
         }
       }
+    })
+
+    .state('app.socials', {
+      url: '/socials',
+      views: {
+        'menuContent': {
+          templateUrl: 'socials/twitters.html',
+          controller: 'TwitterCtrl'
+        }
+      }
     });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/events');
 })

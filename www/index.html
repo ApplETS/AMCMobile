@@ -13,6 +13,8 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
+    <script src="lib/sha.js"></script>
+
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
@@ -21,18 +23,25 @@
     <!-- cordova script (this will be a 404 during development) -->
     <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
     <!--<script src="cordova.js"></script>-->
-    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/ng-cordova-oauth/dist/ng-cordova-oauth.min.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="layout/ctrlLayout.js"></script>
+    <script src="partners/ctrlPartners.js"></script>
     <script src="draws/ctrlDraws.js"></script>
     <script src="events/ctrlEvents.js"></script>
     <script src="songs/ctrlSongs.js"></script>
+    <script src="agendas/ctrlAgendas.js"></script>
+    <script src="socials/ctrlTwitters.js"></script>
 
     <script src="services/servicesEvents.js"></script>
+    <script src="services/servicesPartners.js"></script>
     <script src="services/servicesDraws.js"></script>
     <script src="services/servicesSongs.js"></script>
+    <script src="services/servicesAgendas.js"></script>
+    <script src="services/servicesTwitters.js"></script>
   </head>
 
   <body ng-app="amc">

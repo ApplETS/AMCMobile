@@ -42,8 +42,8 @@ angular.module('amc.ctrlSongs', ['ionic'])
       }).
       success(function (data, status, header, config) {
         console.log(angular.toJson(data));
-        //alert('GOOD      '+JSON.stringify(data));
-        if (data.valueBool == "true" || data.valueBool == true)
+        //alert('GOOD.  '+JSON.stringify(data));
+        if (data == true)
           alert("Votre vote a été pris en compte.");
         else
           alert("Votre vote n'a pas été pris en compte.");

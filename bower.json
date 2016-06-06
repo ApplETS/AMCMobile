@@ -23,5 +23,8 @@
     "www/lib",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "ng-cordova-oauth": "^0.2.8"
+  }
 }

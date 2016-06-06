@@ -12,6 +12,7 @@ angular.module('amc.servicesEvents', ['ngResource'])
           console.log('Success_events', resp);
           return resp.data;
         }, function (err) {
+          console.log(angular.toJson(err));
           console.error('Error_events', err);
           return null;
         });
